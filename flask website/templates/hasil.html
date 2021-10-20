@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.83.1">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <title>Prediksi Kelulusan</title>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .container-footer {
+            width: 100%;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar navbar-dark bg-success shadow-sm">
+            <div class="container d-flex flex-wrap">
+                <ul class="nav me-auto">
+                    <li class="nav-item"><a href="{{url_for('index2')}}"
+                            class="navbar-brand d-flex align-items-center"><strong>Prediksi Kelulusan</strong></a></li>
+                </ul>
+                <ul class="nav">
+                    <li class="nav-item"><a href="{{url_for('visualisasi')}}"
+                            class="nav-link link-light px-2">Visualisasi</a></li>
+                    <li class="nav-item"><a href="{{url_for('prediksi')}}" class="nav-link link-light px-2">Prediksi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {%if data == 0%}
+        <section class=" p-5 mb-5 mt-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-12 col-md-8 mx-auto">
+                    <h5>Hasil Prediksi:</h5>
+                    <h1>LULUS TERLAMBAT</h1>
+                    <p>Maaf, Anda terprediksi lulus terlambat.
+                        <br>Jangan merasa tidak percaya diri. Anda tetap dapat membuktikan bahwa Anda dapat lulus tepat
+                        waktu.
+                        <br>Ingat, hasil tersebut adalah hasil prediksi berdasarkan algoritma machine learning.
+                        <br>Silahkan beri laporan kepada dosen wali Anda.
+                        <br>Sukses selalu! Semoga berhasil.
+                    </p>
+                    <p> <a href="{{url_for('index2')}}" class="text-dark">Kembali ke halaman utama</a></p>
+                </div>
+            </div>
+        </section>
+
+        {%elif data==1%}
+        <section class=" p-5 mb-5 mt-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-12 col-md-8 mx-auto">
+                    <h5>Hasil Prediksi:</h5>
+                    <h1>LULUS TEPAT WAKTU</h1>
+                    <p>Selamat, Anda terprediksi lulus tepat waktu.
+                        <br>Jangan merasa puas dengan hasil prediksi. Tetap pertahankan dan tingkatkan prestasi.
+                        <br>Ingat, hasil tersebut adalah hasil prediksi berdasarkan algoritma machine learning.
+                        <br>Silahkan beri laporan kepada dosen wali Anda.
+                        <br>Sukses selalu! Semoga berhasil.
+                    </p>
+                    <p> <a href="{{url_for('index2')}}" class="text-dark">Kembali ke halaman utama</a></p>
+                </div>
+            </div>
+        </section>
+
+        {%endif%}
+    </main>
+
+    <footer class="text-muted text-center pt-3 pb-2 bg-dark shadow-sm">
+        <div class="container-footer">
+            <p>© 2021 Copyright: <strong> UPN V Jatim - Sistem Informasi 2017</strong></p>
+        </div>
+    </footer>
+
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

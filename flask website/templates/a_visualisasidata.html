@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Admin | Prediksi Kelulusan</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+    <link href="{{ url_for('static', filename='assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='dashboard.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar navbar-dark sticky-top bg-success flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Admin</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="{{url_for('keluar')}}"><strong>Keluar</strong></a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{url_for('admin')}}">
+                                Beranda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('masterdata')}}">
+                                Master Data
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{url_for('visualisasidata')}}">
+                                Visualisasi Data
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('prediksikelulusan')}}">
+                                Prediksi Kelulusan
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-4">
+                <h3>Visualisasi Data</h3>
+                <p class="pt-2">Halaman ini menampilkan visualisasi data kelulusan mahasiswa Fakultas Ilmu Komputer.</p>
+
+                <section class="py-5 pt-3 container">
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='persentase_kelulusan.png')}}" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Persetase Kelulusan Mahasiswa
+                                        Fakultas Ilmu
+                                        Komputer</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan bahwa persentase kelulusan
+                                        tepat
+                                        waktu
+                                        mahasiswa Fakultas Ilmu Komputer meningkat dari tahun 2014 hingga tahun 2016,
+                                        yaitu 8.9%
+                                        pada tahun 2014, 24% pada tahun 2015, dan 27% pada tahun 2016.</p>
+                                    <p class="card-text mb-auto">Gambar tersebut juga menunjukkan jumlah mahasiswa
+                                        Fakultas Ilmu
+                                        Komputer yang sudah lulus per-Februari 2021, yaitu angkatan 2014 dengan 171
+                                        mahasiswa
+                                        yang sudah lulus, 2015 dengan 146 mahasiswa yang sudah lulus, 2016 dengan 88
+                                        mahasiswa
+                                        yang sudah lulus. Persentase kelulusan berturut-turut adalah 58%, 60%, dan 49%
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='corr_ips.png')}}" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Indeks Prestasi Sementara yang
+                                        Paling
+                                        Berpengaruh</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan bahwa Indeks Prestasi
+                                        Sementara
+                                        (IPS)
+                                        yang paling memengaruhi kelulusan mahasiswa Fakultas Ilmu Komputer adalah IPS
+                                        Semester
+                                        5. Ini bukan berarti bahwa IPS Semester lain tidak memengaruhi kelulusan
+                                        mahasiswa.</p>
+                                    <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='corr_sks.png')}}" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Satuan Kredit Semester yang Paling
+                                        Berpengaruh</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan bahwa Satuan Kredit
+                                        Semester (SKS)
+                                        yang paling memengaruhi kelulusan mahasiswa Fakultas Ilmu Komputer adalah SKS
+                                        Semester
+                                        6. Ini bukan berarti bahwa SKS Semester lain tidak memengaruhi kelulusan
+                                        mahasiswa.</p>
+                                    <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='jur_data.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='jur_peluang.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Data Kelulusan Berdasarkan
+                                        Jurusan</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan jurusan Sistem
+                                        Informasi memiliki kemungkinan kelulusan tepat waktu lebih tinggi daripada
+                                        jurusan
+                                        Informatika.</p>
+                                    <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='jk_data.png')}}" width="275" height="275" />
+                                </div>
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='jk_peluang.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Data Kelulusan Berdasarkan
+                                        Jenis Kelamin</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan menunjukkan jenis kelamin
+                                        Perempuan memiliki kemungkinan kelulusan tepat waktu lebih tinggi daripada jenis
+                                        kelamin
+                                        Laki-laki.</p>
+                                    <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='usia_data.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='usia_peluang.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Data Kelulusan Berdasarkan
+                                        Usia</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan usia 19 tahun memiliki
+                                        kemungkinan kelulusan tepat waktu lebih tinggi daripada usia lainnya.</p>
+                                    <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='asal_data.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='asal_peluang.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Data Kelulusan Berdasarkan
+                                        Asal</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan asal Luar Surabaya memiliki
+                                        kemungkinan kelulusan tepat waktu lebih tinggi daripada mahasiswa asal Surabaya.
+                                    </p>
+                                    <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='jm_data.png')}}" width="275" height="275" />
+                                </div>
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='jm_peluang.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Data Kelulusan Berdasarkan
+                                        Jalur Masuk</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan mahasiswa jalur masuk
+                                        SBMPTN memiliki
+                                        kemungkinan kelulusan tepat waktu lebih tinggi daripada mahasiswa
+                                        jalur masuk SNMPTN dan Mandiri.
+                                    </p>
+                                    <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='gol_data.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='gol_peluang.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Data Kelulusan Berdasarkan
+                                        Golongan UKT</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan mahasiswa dengan golongan
+                                        UKT 3 memiliki kemungkinan kelulusan tepat waktu lebih tinggi daripada mahasiswa
+                                        dengan golongan UKT lainnya.
+                                    </p>
+                                    <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='org_data.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col-auto d-none d-lg-block p-4">
+                                    <img src="{{url_for('static', filename='org_peluang.png')}}" width="275"
+                                        height="275" />
+                                </div>
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Data Kelulusan Berdasarkan
+                                        Organisasi Lingkup Fakultas</strong>
+                                    <p class="card-text mb-auto">Gambar tersebut menunjukkan mahasiswa yang mengikuti
+                                        organisasi kampus kemungkinan kelulusan tepat waktu lebih tinggi daripada
+                                        mahasiswa
+                                        yang tidak mengikuti organisasi.
+                                    </p>
+                                    <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
+        integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
+        crossorigin="anonymous"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

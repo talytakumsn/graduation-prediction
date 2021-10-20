@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.83.1">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <title>Prediksi Kelulusan</title>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .container-footer {
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar navbar-dark bg-success shadow-sm">
+            <div class="container d-flex flex-wrap">
+                <ul class="nav me-auto">
+                    <li class="nav-item"><a href="{{url_for('index2')}}"
+                            class="navbar-brand d-flex align-items-center"><strong>Prediksi Kelulusan</strong></a></li>
+                </ul>
+                <ul class="nav">
+                    <li class="nav-item"><a href="{{url_for('visualisasi')}}"
+                            class="nav-link link-light px-2"><strong>Visualisasi</strong></a></li>
+                    <li class="nav-item"><a href="{{url_for('prediksi')}}" class="nav-link link-light px-2">Prediksi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="py-5 container">
+            <div class="row py-lg-3">
+                <div class="col mx-auto">
+                    <h4>Visualisasi Data Kelulusan</h4>
+                    <p>Halaman ini menampilkan visualisasi data mengenai kelulusan mahasiswa Fakultas Ilmu Komputer
+                        per-Februari 2021</p>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col-auto d-none d-lg-block p-4">
+                            <img src="{{url_for('static', filename='persentase_kelulusan.png')}}" />
+                        </div>
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">Persetase Kelulusan Mahasiswa Fakultas Ilmu
+                                Komputer</strong>
+                            <p class="card-text mb-auto">Gambar tersebut menunjukkan bahwa persentase kelulusan tepat
+                                waktu
+                                mahasiswa Fakultas Ilmu Komputer meningkat dari tahun 2014 hingga tahun 2016, yaitu 8.9%
+                                pada tahun 2014, 24% pada tahun 2015, dan 27% pada tahun 2016.</p>
+                            <p class="card-text mb-auto">Gambar tersebut juga menunjukkan jumlah mahasiswa Fakultas Ilmu
+                                Komputer yang sudah lulus per-Februari 2021, yaitu angkatan 2014 dengan 171 mahasiswa
+                                yang sudah lulus, 2015 dengan 146 mahasiswa yang sudah lulus, 2016 dengan 88 mahasiswa
+                                yang sudah lulus. Persentase kelulusan berturut-turut adalah 58%, 60%, dan 49%</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col-auto d-none d-lg-block p-4">
+                            <img src="{{url_for('static', filename='corr_ips.png')}}" />
+                        </div>
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">Indeks Prestasi Sementara yang Paling
+                                Berpengaruh</strong>
+                            <p class="card-text mb-auto">Gambar tersebut menunjukkan bahwa Indeks Prestasi Sementara
+                                (IPS)
+                                yang paling memengaruhi kelulusan mahasiswa Fakultas Ilmu Komputer adalah IPS Semester
+                                5. Ini bukan berarti bahwa IPS Semester lain tidak memengaruhi kelulusan mahasiswa.</p>
+                            <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col-auto d-none d-lg-block p-4">
+                            <img src="{{url_for('static', filename='corr_sks.png')}}" />
+                        </div>
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">Satuan Kredit Semester yang Paling
+                                Berpengaruh</strong>
+                            <p class="card-text mb-auto">Gambar tersebut menunjukkan bahwa Satuan Kredit Semester (SKS)
+                                yang paling memengaruhi kelulusan mahasiswa Fakultas Ilmu Komputer adalah SKS Semester
+                                6. Ini bukan berarti bahwa SKS Semester lain tidak memengaruhi kelulusan mahasiswa.</p>
+                            <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="text-muted text-center pt-3 pb-2 bg-dark shadow-sm">
+        <div class="container-footer">
+            <p>© 2021 Copyright: <strong> UPN V Jatim - Sistem Informasi 2017</strong></p>
+        </div>
+    </footer>
+
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

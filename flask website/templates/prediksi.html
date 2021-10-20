@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.83.1">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <title>Prediksi Kelulusan</title>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .container-footer {
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar navbar-dark bg-success shadow-sm">
+            <div class="container d-flex flex-wrap">
+                <ul class="nav me-auto">
+                    <li class="nav-item"><a href="{{url_for('index2')}}"
+                            class="navbar-brand d-flex align-items-center"><strong>Prediksi Kelulusan</strong></a></li>
+                </ul>
+                <ul class="nav">
+                    <li class="nav-item"><a href="{{url_for('visualisasi')}}"
+                            class="nav-link link-light px-2">Visualisasi</a></li>
+                    <li class="nav-item"><a href="{{url_for('prediksi')}}"
+                            class="nav-link link-light px-2 active"><strong>Prediksi</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="py-5 container">
+            <div class="row py-lg-3">
+                <div class="col mx-auto">
+                    <h4>Form Prediksi Kelulusan</h4>
+                    <p>Isi dengan data yang benar!</p>
+                    <br>
+
+                    <!-- Form Input -->
+                    <form method="POST" action="{{url_for('home')}}" class="needs-validation">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">NPM</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="npm" placeholder="NPM" required
+                                            maxlength="11">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Jurusan</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-select" name="jur" required>
+                                            <option selected disabled value></option>
+                                            <option value="0">Informatika</option>
+                                            <option value="1">Sistem Informasi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Jenis Kelamin</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-select" name="jk" required>
+                                            <option selected disabled value></option>
+                                            <option value="0">Laki-laki</option>
+                                            <option value="1">Perempuan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Usia</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="usia" placeholder="Ex: 21"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Asal</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-select" name="asal" required>
+                                            <option selected disabled value></option>
+                                            <option value="0">Surabaya</option>
+                                            <option value="1">Luar Surabaya</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Jalur Masuk</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-select" name="jm" required>
+                                            <option selected disabled value></option>
+                                            <option value="0">SNMPTN</option>
+                                            <option value="1">SBMPTN</option>
+                                            <option value="2">Mandiri</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Golongan UKT</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-select" name="gol" required>
+                                            <option selected disabled value></option>
+                                            <option value="1">Gol 1: 500.000</option>
+                                            <option value="2">Gol 2: 1.000.000</option>
+                                            <option value="3">Gol 3: IF(3.500.000) / SI(3.000.000)</option>
+                                            <option value="4">Gol 4: IF(5.000.000) / SI(4.000.000)</option>
+                                            <option value="5">Gol 5: IF(6.000.000) / SI(5.000.000)</option>
+                                            <option value="6">Gol 6: IF(7.000.000) / SI(6.000.000)</option>
+                                            <option value="7">Gol 7: IF(8.000.000) / SI(7.000.000)</option>
+                                            <option value="8">Gol 8: Bidikmisi(0)</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 ">
+                                    <label for="inputPassword3" class="col-sm-3 col-form-label">Organisasi</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-select" name="org" required>
+                                            <option selected disabled value>Pernah mengikuti organisasi kampus?</option>
+                                            <option value="0">Ya</option>
+                                            <option value="1">Tidak</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">IPS Semester 1</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="ips1" placeholder="Ex: 3.504"
+                                            required min="0" max="4" step="any">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">IPS Semester 2</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="ips2" placeholder="Ex: 3.504"
+                                            required min="0" max="4" step="any">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">IPS Semester 3</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="ips3" placeholder="Ex: 3.504"
+                                            required min="0" max="4" step="any">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">IPS Semester 4</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="ips4" placeholder="Ex: 3.504"
+                                            required min="0" max="4" step="any">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">IPS Semester 5</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="ips5" placeholder="Ex: 3.504"
+                                            required min="0" max="4" step="any">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">SKS Semester 1</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="sks1" placeholder="Ex: 23"
+                                            required min="0" max="24" step="1">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">SKS Semester 2</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="sks2" placeholder="Ex: 23"
+                                            required min="0" max="24" step="1">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">SKS Semester 3</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="sks3" placeholder="Ex: 23"
+                                            required min="0" max="24" step="1">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">SKS Semester 4</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="sks4" placeholder="Ex: 23"
+                                            required min="0" max="24" step="1">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">SKS Semester 5</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="sks5" placeholder="Ex: 23"
+                                            required min="0" max="24" step="1">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">SKS Semester 6</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="sks6" placeholder="Ex: 23"
+                                            required min="0" max="24" step="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-danger me-md-2" type="reset" value="Reset">Reset</button>
+                            <button class="btn btn-primary me-md-5" type="submit" value="Submit">Prediksi</button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="text-muted text-center pt-3 pb-2 bg-dark shadow-sm">
+        <div class="container-footer">
+            <p>© 2021 Copyright: <strong> UPN V Jatim - Sistem Informasi 2017</strong></p>
+        </div>
+    </footer>
+
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
